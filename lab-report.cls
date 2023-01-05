@@ -1,9 +1,8 @@
 % lab-report.cls
 
 \ProvidesClass{lab-report}[2023/01/05 v1.0.2301060036 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
-\LoadClass[utf8, a4paper, 12pt]{article}
+\LoadClass[utf8, a4paper, 11pt]{article}
 
-\RequirePackage[scheme=plain]{ctex} % for Chinese support
 \RequirePackage{booktabs}
 \RequirePackage{indentfirst}
 \RequirePackage{fancyhdr}
@@ -21,10 +20,11 @@
 \RequirePackage{listings}
 \RequirePackage{color}
 \RequirePackage{hyperref}
-% \RequirePackage{libertinus-otf}
+\RequirePackage{newtx}
+\defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
+\RequirePackage[scheme=plain]{ctex} % for Chinese support
 
 \lstset{ % General setup for the package
-    language=Perl,
     basicstyle=\small\sffamily,
     numbers=left,
     numberstyle=\tiny,
@@ -42,7 +42,6 @@
 \setitemize{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 \setdescription{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 
-% \setlength{\parskip}{1.2em} % 设置段落间距
 \renewcommand{\baselinestretch}{1.5} % 设置行距
 
 \everymath{\displaystyle}

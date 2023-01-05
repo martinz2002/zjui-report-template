@@ -11,7 +11,7 @@ This is a template for reports (such as lab reports, MP reports) for ECE courses
 - `members.tex`: provides a list of people that contributes to the assignment who are required to provide names and student ids in the report. Usually they are the group members / teammates of the author.
 - `titlepage.tex`: provides the layout of the cover page, which is implemented using `titlepage` environment.
 - `template/template.tex`: provides an example of the report, which shows the basic usage of this $\LaTeX$ template.
-- `zjui.png`: the logo of ZJU-UIUC Institute.
+- `logo.png`: the logo of ZJU-UIUC Institute.
 
 ## Usage
 
