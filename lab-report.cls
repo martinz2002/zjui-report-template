@@ -1,7 +1,7 @@
 % lab-report.cls
 
-\ProvidesClass{lab-report, 11pt}[2023/01/05 v1.0 (zhongmartin@outlook.com All Rights Reserved)]
-\LoadClass{article}
+\ProvidesClass{lab-report}[2023/01/05 v1.0.2301060036 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
+\LoadClass[utf8, a4paper, 12pt]{article}
 
 \RequirePackage[scheme=plain]{ctex} % for Chinese support
 \RequirePackage{booktabs}
@@ -12,6 +12,7 @@
 \RequirePackage{caption}
 \RequirePackage{mathtools} % load AMS maths
 \RequirePackage{amsmath}  % for math spacing
+\RequirePackage{amssymb}  % for math symbols
 \RequirePackage{lastpage}
 \RequirePackage[margin=1in]{geometry} % an easy way to change page layout
 \RequirePackage{enumitem}
@@ -19,7 +20,7 @@
 \RequirePackage{verbatim} % allows for verbatim text ignoring any TeX commands inside "verbatim" environment
 \RequirePackage{listings}
 \RequirePackage{color}
-\RequirePackage{kpfonts-otf}
+\RequirePackage{libertinus-otf}
 
 \lstset{ % General setup for the package
     language=Perl,
