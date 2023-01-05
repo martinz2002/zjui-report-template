@@ -2,20 +2,81 @@
 \documentclass{../lab-report}
 
 % Define the info of the lab:
-\def\RPTNUMBER{1}
-\def\RPTTITLE{I am a title}
+\def\RPTNUMBER{0}
+\def\RPTTITLE{Template Report}
 
 \begin{document}
     % Insert the titlepage
     \input{../titlepage.tex}
 
-    \section{Introduction}
+    {\bfseries The following contents are copied from a blank layout sheet provided on iZJU Blackboard, which can be accessed through \url{https://learn.intl.zju.edu.cn/bbcswebdav/pid-51159-dt-content-rid-503119_1/courses/UIUC-ECE385-2110-M/385LabSample%281%29.pdf} }
 
-    this is an intro to the lab
+    \section{Purpose of Circuit}
+    This is where you should briefly (a few sentences) describe the purpose of this lab, i.e. is 
+    this lab about flip-flops? Memory? Computation unit? How is this lab useful in the 
+    context of a processor architecture?
 
-    \pagebreak
-    \section{conclusion}
+    \section{Description of Circuit}
+    This is where you should explain the operation of your circuit in detail. Include a 
+    description of any logic that you have designed, and explain \textbf{how you came up with 
+    your design}. This means things like K-Maps, state diagrams, truth tables, etc... A rule 
+    of thumb is that for anything you have done towards the designing your circuit, you 
+    should include in your lab report in an \underline{organized} fashion that \underline{makes sense} (we've seen 
+    many lab reports with scribbled pages as attachment. This is not a good presentation of 
+    your work).
 
-    i am the conclusion
+    Do not just list the components in your circuit (e.g. ``this design uses 4 NAND gates and 
+    an inverter to perform the function; we drive input B with this signal, and this is what we 
+    got for the output''). This is the job of the logic diagrams and the layout sheet. Rather, a 
+    well-informed circuit description should be a more detailed explanation of the `Purpose 
+    of Circuit', i.e., if you are working on a memory system, what components does the 
+    system need (e.g., registers for the actual storage; MUXs for data selection; control unit 
+    for read/write request)? How are the registers arranged (i.e., in series/parallel? How 
+    many of them? How large is each storage space)? How do you operate the system (e.g., 
+    the circuit is manually resetted. If we wish to store data X into address Y, we need to 
+    operate control Z, then the circuit goes through processes A→D to complete the storing 
+    action...)
+
+    \section{High Level Block Diagram}
+    For more complex designs, divide your design into blocks and include a top-level block 
+    diagram showing only the major components of your design and their interconnections. 
+    Block diagrams are higher level representation of your logic diagram. It divides your 
+    logic diagram into large 'chunks' into black boxes (e.g. Fig. 1 on pp. 3.2), where each box 
+    serves a meaningful purpose in the large picture of your design. The block diagram does 
+    not give you the details of the implementation at all, but its purpose is to introduce your 
+    design and your circuit in an abstract way, so people will be able to fully grasp the big 
+    idea in a short amount of time. Please note that block diagrams are needed in your lab 
+    reports. The more logical you split up your design modules, the more likely you can 
+    clear-cut them apart for wiring and debugging purposes (it also enhances the organization 
+    and hence the readability of your design).
+
+    \section{Logic Diagrams}
+    Include a logic diagram showing the gate-level layout of your circuit. Be sure to label all 
+    inputs, outputs, pin numbers, as well as the chip locations on the protoboard (B1, C3, etc. 
+    in coordination with the component layout sheet). For an example see Figure 9 on page 
+    GG.21 of the ECE 385 lab manual.
+
+    \section{State Diagrams and Tables}
+    For any design that uses a state machine, you should include a state diagram and, 
+    optionally, transition tables to show how your state machine works.
+
+    \section{Component Layout}
+    Include a component layout of your circuit using the sheets provided in your lab manual. 
+    You should include the layout of each circuit (for two or more circuits for a single lab, 
+    please draw clear lines to separate them). For an example, see Figure 8 on page GG.20 of 
+    the ECE 385 lab manual.
+
+    For each chip of each circuit, you should draw out the pins (different chips will have 
+    different numbers of pins on each side). \underline{DO NOT} label every single pin in your design, 
+    as it is impossible for anyone to read. \underline{DO} label fundamental pins such as external IOs to 
+    the IO box, VDD, and GND. Remember to write the chip number in each component.
+
+    \section{Answers to Pre-Lab Questions}
+    You should include the answers to all of the pre-lab questions in your lab report. Answer 
+    these questions before your come into the lab to do the experiment, but correct the 
+    answers if you discover during or after the lab that you made a mistake.
+
+    ... 
+
 
 \end{document}

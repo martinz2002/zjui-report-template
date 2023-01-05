@@ -14,13 +14,14 @@
 \RequirePackage{amsmath}  % for math spacing
 \RequirePackage{amssymb}  % for math symbols
 \RequirePackage{lastpage}
-\RequirePackage[margin=1in]{geometry} % an easy way to change page layout
+\RequirePackage[margin=1.2in]{geometry} % an easy way to change page layout
 \RequirePackage{enumitem}
 \RequirePackage{gensymb}
 \RequirePackage{verbatim} % allows for verbatim text ignoring any TeX commands inside "verbatim" environment
 \RequirePackage{listings}
 \RequirePackage{color}
-\RequirePackage{libertinus-otf}
+\RequirePackage{hyperref}
+% \RequirePackage{libertinus-otf}
 
 \lstset{ % General setup for the package
     language=Perl,
@@ -41,7 +42,8 @@
 \setitemize{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 \setdescription{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 
-\setlength{\parskip}{1em} % 设置段落间距
+% \setlength{\parskip}{1.2em} % 设置段落间距
+\renewcommand{\baselinestretch}{1.5} % 设置行距
 
 \everymath{\displaystyle}
 
