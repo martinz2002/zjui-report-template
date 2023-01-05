@@ -12,7 +12,6 @@
 \RequirePackage{caption}
 \RequirePackage{mathtools} % load AMS maths
 \RequirePackage{amsmath}  % for math spacing
-\RequirePackage{amssymb}  % for math spacing; already included in kpfonts
 \RequirePackage{lastpage}
 \RequirePackage[margin=1in]{geometry} % an easy way to change page layout
 \RequirePackage{enumitem}
