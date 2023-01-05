@@ -1,6 +1,4 @@
-% ece385-zjui.cls
-
-% zjui-lab.cls
+% lab-report.cls
 
 \ProvidesClass{lab-report, 11pt}[2023/01/05 v1.0 (zhongmartin@outlook.com All Rights Reserved)]
 \LoadClass{article}
