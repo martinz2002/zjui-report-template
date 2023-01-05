@@ -63,4 +63,4 @@
 \title{\textbf{\COURSECODE~\RPTPREFIX~\#\RPTNUMBER: \RPTTITLE}}
 \date{\RPTDATE}
 \def\RPTDATE{\today} % default report date is "today"
-\input{../courseInfo.tex}  % input the macros
+\input{../course-info.tex}  % input the macros
