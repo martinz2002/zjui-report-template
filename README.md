@@ -19,6 +19,10 @@ Write your document like `template/template.tex` and **compile with XeTeX or Lua
 
 If you do not like `ctex`, simply remove it from `lab-report.cls`.
 
+## Macros
+
+This template uses macros to define the course information. To see how the macros you defined are reflected in the report, click [macros_positions.pdf](./macros_positions.pdf) for reference.
+
 ## Feedback
 
 Open an issue.
