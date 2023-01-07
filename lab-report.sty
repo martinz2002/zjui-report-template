@@ -1,11 +1,11 @@
 % lab-report.sty
 % Author: Martin Zhong
 % Date: 2023/01/07
-% Version: 2.0.2301071617
+% Version: v2.1.2301071716
 % License: MIT
 % Description: Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.
 
-\ProvidesPackage{lab-report}[2023/01/05 v2.0.2301071617 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
+\ProvidesPackage{lab-report}[2023/01/05 v2.1.2301071716 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
 
 \RequirePackage{booktabs}
 \RequirePackage{indentfirst}
@@ -17,15 +17,13 @@
 \RequirePackage{amsmath}  % for math spacing
 \RequirePackage{amssymb}  % for math symbols
 \RequirePackage{lastpage}
-\RequirePackage[margin=1.2in]{geometry} % an easy way to change page layout
+% \RequirePackage[margin=1.2in]{geometry} % an easy way to change page layout
 \RequirePackage{enumitem}
 \RequirePackage{gensymb}
 \RequirePackage{verbatim} % allows for verbatim text ignoring any TeX commands inside "verbatim" environment
 \RequirePackage{listings}
 \RequirePackage{color}
 \RequirePackage{hyperref}
-\RequirePackage{kpfonts-otf}
-\defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
 \RequirePackage[scheme=plain]{ctex} % for Chinese support
 
 \lstset{ % General setup for the package
@@ -55,9 +53,9 @@
 \fancyhead[C]{}
 \fancyhead[L]{\RPTPREFIX~\RPTNUMBER: \RPTTITLE}
 \fancyhead[R]{\RPTDATE}
-\fancyfoot[C]{\thepage/\pageref{LastPage}}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.5pt}
+\fancyfoot[C]{\thepage}
+% \renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
 \newcommand{\E}{\text{e}}
 \renewcommand{\Re}{\text{Re}}
@@ -68,6 +66,53 @@
 \title{\textbf{\COURSECODE~\RPTPREFIX~\#\RPTNUMBER: \RPTTITLE}}
 \date{\RPTDATE}
 \def\RPTDATE{\today} % default report date is "today"
-\input{../course-info.tex}  % input the macros
 
-\newcommand\reporttitle[1]{\def\RPTTITLE{#1}}
+\newcommand\reporttitle[3]{\def\RPTPREFIX{#1} \def\RPTNUMBER{#2} \def\RPTTITLE{#3}}
+\newcommand\courseinfo[3]{\def\COURSECODE{#1} \def\COURSENAME{#2} \def\SEMESTER{#3}}
+\newcommand\classinfo[3]{\def\SECTION{#1} \def\CLASSTIME{#2} \def\LOCATION{#3}}
+\newcommand\members[1]{\def\MEMBERS{#1}}
+\newcommand\logo[1]{\def\PATHTOLOGO{#1}}
+
+\newcommand\maketitlepage{
+    \begin{titlepage}
+        \centering
+        
+        \includegraphics[width=0.618\textwidth]{\PATHTOLOGO}
+    
+        \vspace{1cm}
+    
+        {\sf \LARGE \COURSECODE: \COURSENAME}
+    
+        {\sf \Large (\SEMESTER)}
+    
+        \vfill
+        
+        {\LARGE \RPTPREFIX ~Report}
+    
+        \vfill
+    
+        {\Huge\bfseries \RPTPREFIX ~\#\RPTNUMBER: \textsc{\RPTTITLE}}
+    
+        \vfill
+        
+        {\Large \MEMBERS}
+    
+        \vfill
+    
+        \begin{table}[h!]
+            \centering
+            \sf
+            \begin{tabular}{@{}r@{:}l@{}}
+    
+            Section        & \SECTION    \\
+            Class Time     & \CLASSTIME  \\
+            Class Location & \LOCATION   \\
+            % Instructors:    & \TEACHERNAME \\
+            Report Date    & \RPTDATE    \\
+    
+            \end{tabular}
+        \end{table}
+    
+    \end{titlepage}
+    
+}
