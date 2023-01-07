@@ -20,8 +20,25 @@
 \RequirePackage{listings}
 \RequirePackage{color}
 \RequirePackage{hyperref}
-\RequirePackage{newtx}
-\defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
+
+\DeclareOption{libertinus}
+{
+    \RequirePackage{libertinus-otf}
+    \defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
+}
+
+\DeclareOption{times}
+{
+    \RequirePackage{newtx}
+    \defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
+}
+
+\DeclareOption{kpfonts}
+{
+    \RequirePackage{kpfonts-otf}
+    \defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
+}
+
 \RequirePackage[scheme=plain]{ctex} % for Chinese support
 
 \lstset{ % General setup for the package
