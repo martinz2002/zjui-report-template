@@ -1,7 +1,6 @@
 % lab-report.cls
 
-\ProvidesClass{lab-report}[2023/01/05 v1.0.2301060036 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
-\LoadClass[utf8, a4paper, 11pt]{article}
+\ProvidesPackage{lab-report}[2023/01/05 v2.0.2301071617 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
 
 \RequirePackage{booktabs}
 \RequirePackage{indentfirst}
@@ -20,25 +19,8 @@
 \RequirePackage{listings}
 \RequirePackage{color}
 \RequirePackage{hyperref}
-
-\DeclareOption{libertinus}
-{
-    \RequirePackage{libertinus-otf}
-    \defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
-}
-
-\DeclareOption{times}
-{
-    \RequirePackage{newtx}
-    \defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
-}
-
-\DeclareOption{kpfonts}
-{
-    \RequirePackage{kpfonts-otf}
-    \defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
-}
-
+\RequirePackage{kpfonts-otf}
+\defaultfontfeatures{}  % solve compability problems between newtx and ctex; refer to https://github.com/CTeX-org/ctex-kit/issues/609
 \RequirePackage[scheme=plain]{ctex} % for Chinese support
 
 \lstset{ % General setup for the package
@@ -82,3 +64,5 @@
 \date{\RPTDATE}
 \def\RPTDATE{\today} % default report date is "today"
 \input{../course-info.tex}  % input the macros
+
+\newcommand\reporttitle[1]{\def\RPTTITLE{#1}}
