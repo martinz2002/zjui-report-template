@@ -1,11 +1,11 @@
 % lab-report.sty
 % Author: Martin Zhong
 % Date: 2023/01/07
-% Version: v2.1.2301091129
+% Version: v2.1.2301091238
 % License: MIT
 % Description: Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.
 
-\ProvidesPackage{lab-report}[2023/01/05 v2.1.2301091129 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
+\ProvidesPackage{lab-report}[2023/01/05 v2.1.2301091238 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
 
 \RequirePackage{booktabs}
 \RequirePackage{indentfirst}
@@ -13,20 +13,28 @@
 \RequirePackage{fontenc}
 \RequirePackage{graphicx}
 \RequirePackage{caption}
-\RequirePackage{mathtools} % load AMS maths
 \RequirePackage{amsmath}  % for math spacing
 \RequirePackage{amssymb}  % for math symbols
 \RequirePackage{lastpage}
 \RequirePackage[top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm]{geometry} % page layout; same with the default of MS word
-% \RequirePackage[margin=3cm]{geometry}
 \RequirePackage{enumitem}
-\RequirePackage{gensymb}
 \RequirePackage{verbatim} % allows for verbatim text ignoring any TeX commands inside "verbatim" environment
 \RequirePackage{listings}
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{hyperref}
 \RequirePackage{newtx} \defaultfontfeatures{}
 \RequirePackage[scheme=plain]{ctex} % for Chinese support
+\RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% 支持伪代码
+
+\SetKwData{Null}{null}
+\SetKwProg{Fn}{Function}{}{}
+\SetKwProg{Proc}{Procedure}{}{}
+\SetKw{Exit}{exit}
+\SetKw{Call}{call}
+\SetKwInOut{In}{input}
+\SetKwInOut{Out}{output}
+\SetKwData{True}{true}
+\SetKwData{False}{false}
 
 \lstset{ % General setup for the package
     basicstyle=\small\ttfamily,
@@ -45,7 +53,7 @@
 \setitemize{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 \setdescription{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 
-\renewcommand{\baselinestretch}{1.25} % 设置行距
+\renewcommand{\baselinestretch}{1.2} % 设置行距
 
 \everymath{\displaystyle}
 
@@ -66,8 +74,20 @@
 \newcommand\K{\text{k}} % kilo = 1000
 \newcommand\U[1]{\text{#1}} % for including units in equations
 
-\title{\textbf{\COURSECODE~\RPTPREFIX~\#\RPTNUMBER: \RPTTITLE}}
-\date{\RPTDATE}
+\fancypagestyle{contentpage}
+{
+\fancyhf{}
+\fancyhead[C]{}
+\fancyhead[L]{\RPTPREFIX~\RPTNUMBER}
+\fancyhead[R]{\RPTDATE}
+\fancyfoot[C]{Contents}
+\fancyfoot[L]{\COURSECODE}
+\fancyfoot[R]{\SEMESTER}
+}
+
+\title{\textbf{\RPTPREFIX~\#\RPTNUMBER: \RPTTITLE}}
+\date{}
+% \author{\MEMBERS}
 \def\RPTDATE{\today} % default report date is "today"
 
 \newcommand\reporttitle[3]{\def\RPTPREFIX{#1} \def\RPTNUMBER{#2} \def\RPTTITLE{#3}}
@@ -84,15 +104,15 @@
     
         \vspace{2cm}
 
-        {\Large \COURSECODE: \COURSENAME}
+        {\Large\sf \COURSECODE: \COURSENAME}
     
         \vspace{1em}
         
-        {\Large \RPTPREFIX ~Report}
+        {\Large\sf \RPTPREFIX ~Report}
     
         \vfill
     
-        {\LARGE\bfseries \RPTPREFIX ~\#\RPTNUMBER: \textsc{\RPTTITLE}}
+        {\huge\bfseries \RPTPREFIX ~\#\RPTNUMBER: \RPTTITLE}
     
         \vspace{2cm}
 
@@ -115,6 +135,7 @@
     
     \end{titlepage}
 
-    \tableofcontents
-    \vspace{3em}
+    \tableofcontents\thispagestyle{contentpage}\setcounter{page}{0}
+    \maketitle
+    \thispagestyle{fancy}    
 }
