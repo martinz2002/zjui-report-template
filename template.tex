@@ -1,5 +1,5 @@
 % template.tex
-\documentclass[11pt, a4paper]{article}
+\documentclass[a4paper]{article}
 \usepackage{lab-report}
 
 % Define the info of the lab:
@@ -99,4 +99,44 @@
     ... 
 
     \lstinputlisting[language=python]{agent.py}
+
+    \section{Algorithm Example}
+
+    Here let's see an algorithm example:
+
+    \begin{algorithm}
+        \caption{Build \texttt{Next[]}}
+        \label{alg-build-next}
+        \SetKwArray{pList}{pList}
+        \SetKwData{Next}{next}
+        \SetKwData{Now}{ptr}
+        \SetKwFunction{Append}{append}
+        \SetKwFunction{Length}{getLength}
+        \SetKw{Call}{call}
+
+        \Next.\Append{$0$}
+
+        $x \gets 1$
+
+        $\Now \gets 0$
+
+        \While{$x < \Length{\pList}$}{
+            \If{$\pList{\Now} = \pList{x}$}{
+                $\Now \gets \Now + 1$
+
+                $x \gets x + 1$
+
+                \Call \Next.\Append{\Now}
+
+            }
+            \ElseIf{$\Now \neq 0$}{\Now $\gets$ \Next{$\Now - 1$}}
+            \Else{
+                \Call \Next.\Append{$0$}
+
+                $x \gets x + 1$
+            }
+
+        }
+    \end{algorithm}
+
 \end{document}
