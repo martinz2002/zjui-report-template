@@ -28,6 +28,7 @@
 \RequirePackage{newtx} \defaultfontfeatures{}
 \RequirePackage[scheme=plain]{ctex} % for Chinese support
 \RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% 支持伪代码
+\RequirePackage[showdow]{datetime2}
 
 \SetKwData{Null}{null}
 \SetKwProg{Fn}{Function}{}{}
@@ -141,9 +142,7 @@
     \tableofcontents\thispagestyle{contentpage}\setcounter{page}{0}
     \vfill
     \begin{flushright}
-        \scriptsize
-        Package \texttt{lab-report} version \VERSION.\\
-        \url{https://github.com/martinz2002/zjui-lab-template}
+        Compiled at \DTMnow
     \end{flushright}
 
     \maketitle
