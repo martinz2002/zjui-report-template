@@ -1,22 +1,24 @@
 % template.tex
-\documentclass[12pt, a4paper]{article}
+\documentclass[11pt, a4paper]{article}
 \usepackage{lab-report}
 
 % Define the info of the lab:
 % \def\RPTTITLE{Template Report}
 \reporttitle{Lab}{1}{Introductory Report}
 \courseinfo{ECE 385}{Digital Systems Laboratory}{Spring 2023}
-\classinfo{LE1}{Thursday 18:00 -- 20:50}{D231 Teaching Lab}
-\logo{logo.png}
+\classsection{LE1}
+\logo{logo}
 
 \members{
     \centering
 
-    \Large \textbf{San Zhang (张\hspace{1em}三)}\\
-    \Large 8888888888
-
-    \Large \textbf{Haoran Meng (孟浩然)}\\
-    \Large 9999999999
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{rl}
+            \textbf{San Zhang (张\hspace{1em}三)} & 8888888888 \\
+            \textbf{Haoran Meng (孟浩然)}         & 9999999999
+        \end{tabular}
+    \end{table}
 }
 
 \begin{document}
@@ -46,7 +48,11 @@
     of Circuit', i.e., if you are working on a memory system, what components does the 
     system need (e.g., registers for the actual storage; MUXs for data selection; control unit 
     for read/write request)? How are the registers arranged (i.e., in series/parallel? How 
-    many of them? How large is each storage space)? How do you operate the system (e.g., 
+    many of them?
+    
+    \[P(E) = {n \choose k} p^k (1-p)^{ n-k} \]
+
+    How large is each storage space)? How do you operate the system (e.g., 
     the circuit is manually resetted. If we wish to store data X into address Y, we need to 
     operate control Z, then the circuit goes through processes A→D to complete the storing 
     action...)
@@ -92,5 +98,5 @@
 
     ... 
 
-
+    \lstinputlisting[language=python]{agent.py}
 \end{document}

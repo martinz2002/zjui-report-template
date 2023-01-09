@@ -1,11 +1,11 @@
 % lab-report.sty
 % Author: Martin Zhong
 % Date: 2023/01/07
-% Version: v2.1.2301071716
+% Version: v2.1.2301091129
 % License: MIT
 % Description: Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.
 
-\ProvidesPackage{lab-report}[2023/01/05 v2.1.2301071716 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
+\ProvidesPackage{lab-report}[2023/01/05 v2.1.2301091129 by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
 
 \RequirePackage{booktabs}
 \RequirePackage{indentfirst}
@@ -17,45 +17,48 @@
 \RequirePackage{amsmath}  % for math spacing
 \RequirePackage{amssymb}  % for math symbols
 \RequirePackage{lastpage}
-% \RequirePackage[margin=1.2in]{geometry} % an easy way to change page layout
+\RequirePackage[top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm]{geometry} % page layout; same with the default of MS word
+% \RequirePackage[margin=3cm]{geometry}
 \RequirePackage{enumitem}
 \RequirePackage{gensymb}
 \RequirePackage{verbatim} % allows for verbatim text ignoring any TeX commands inside "verbatim" environment
 \RequirePackage{listings}
-\RequirePackage{color}
+\RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{hyperref}
+\RequirePackage{newtx} \defaultfontfeatures{}
 \RequirePackage[scheme=plain]{ctex} % for Chinese support
 
 \lstset{ % General setup for the package
-    basicstyle=\small\sffamily,
+    basicstyle=\small\ttfamily,
     numbers=left,
-    numberstyle=\tiny,
-    frame=tb,
+    numberstyle=\scriptsize\ttfamily,
+    frame=shadowbox,
     tabsize=4,
+    breaklines,
     columns=fixed,
-    showstringspaces=false,
-    showtabs=false,
     keepspaces,
-    commentstyle=\color{red},
-    keywordstyle=\color{blue}
+    commentstyle=\itshape\color{ForestGreen},
+    keywordstyle=\color{blue}\bfseries,
 }
 
 \setenumerate{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 \setitemize{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 \setdescription{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 
-\renewcommand{\baselinestretch}{1.5} % 设置行距
+\renewcommand{\baselinestretch}{1.25} % 设置行距
 
 \everymath{\displaystyle}
 
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[C]{}
-\fancyhead[L]{\RPTPREFIX~\RPTNUMBER: \RPTTITLE}
+\fancyhead[L]{\RPTPREFIX~\RPTNUMBER}
 \fancyhead[R]{\RPTDATE}
-\fancyfoot[C]{\thepage}
+\fancyfoot[C]{Page~\thepage~of~\pageref{LastPage}}
+\fancyfoot[L]{\COURSECODE}
+\fancyfoot[R]{\SEMESTER}
 % \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
 
 \newcommand{\E}{\text{e}}
 \renewcommand{\Re}{\text{Re}}
@@ -69,7 +72,7 @@
 
 \newcommand\reporttitle[3]{\def\RPTPREFIX{#1} \def\RPTNUMBER{#2} \def\RPTTITLE{#3}}
 \newcommand\courseinfo[3]{\def\COURSECODE{#1} \def\COURSENAME{#2} \def\SEMESTER{#3}}
-\newcommand\classinfo[3]{\def\SECTION{#1} \def\CLASSTIME{#2} \def\LOCATION{#3}}
+\newcommand\classsection[1]{\def\SECTION{#1}}
 \newcommand\members[1]{\def\MEMBERS{#1}}
 \newcommand\logo[1]{\def\PATHTOLOGO{#1}}
 
@@ -77,42 +80,41 @@
     \begin{titlepage}
         \centering
         
-        \includegraphics[width=0.618\textwidth]{\PATHTOLOGO}
+        \includegraphics[width=0.5\pagewidth]{\PATHTOLOGO}
     
-        \vspace{1cm}
+        \vspace{2cm}
+
+        {\Large \COURSECODE: \COURSENAME}
     
-        {\sf \LARGE \COURSECODE: \COURSENAME}
-    
-        {\sf \Large (\SEMESTER)}
-    
-        \vfill
+        \vspace{1em}
         
-        {\LARGE \RPTPREFIX ~Report}
+        {\Large \RPTPREFIX ~Report}
     
         \vfill
     
-        {\Huge\bfseries \RPTPREFIX ~\#\RPTNUMBER: \textsc{\RPTTITLE}}
+        {\LARGE\bfseries \RPTPREFIX ~\#\RPTNUMBER: \textsc{\RPTTITLE}}
     
-        \vfill
+        \vspace{2cm}
+
+        {\normalsize Reported by}
+
+        \vspace{\lineskip}
         
-        {\Large \MEMBERS}
+        {\MEMBERS}
     
         \vfill
     
         \begin{table}[h!]
-            \centering
-            \sf
-            \begin{tabular}{@{}r@{:}l@{}}
-    
+            \centering\sf
+            \begin{tabular}{r @{:\hspace{.5em}} l}
+            Term           & \SEMESTER   \\
             Section        & \SECTION    \\
-            Class Time     & \CLASSTIME  \\
-            Class Location & \LOCATION   \\
-            % Instructors:    & \TEACHERNAME \\
             Report Date    & \RPTDATE    \\
-    
             \end{tabular}
         \end{table}
     
     \end{titlepage}
-    
+
+    \tableofcontents
+    \vspace{3em}
 }
