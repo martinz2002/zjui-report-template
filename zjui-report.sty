@@ -1,14 +1,14 @@
 % lab-report.sty
 % Author: Martin Zhong
-% Date: 2023/01/07
-% Version: v2.2.0
+% Date: 2023/01/22
+% Version: v2.3.1
 % License: MIT
 % Description: Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.
 
-\def\VERSION{v2.2.0}
-\def\RELEASEDATE{2023/01/07}
+\def\VERSION{v2.3.1}
+\def\RELEASEDATE{2023/01/22}
 
-\ProvidesPackage{lab-report}[\RELEASEDATE~\VERSION~by Martin Zhong (zhongmartin@outlook.com) Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.]
+\ProvidesPackage{zjui-report}[\RELEASEDATE~\VERSION~by Martin Zhong (zhongmartin@outlook.com) The template for reports of ZJU-UIUC ECE courses. All Rights Reserved.]
 
 \RequirePackage{booktabs}
 \RequirePackage{indentfirst}
@@ -29,6 +29,7 @@
 \RequirePackage[scheme=plain]{ctex} % for Chinese support
 \RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% 支持伪代码
 \RequirePackage[useregional, showdow]{datetime2}
+\RequirePackage[style=alphabetic,backend=bibtex]{biblatex}
 
 \SetKwData{Null}{null}
 \SetKwProg{Fn}{Function}{}{}
@@ -91,7 +92,7 @@
 
 \title{\textbf{\RPTPREFIX~\#\RPTNUMBER: \RPTTITLE}}
 \date{}
-% \author{\MEMBERS}
+\author{}
 \def\RPTDATE{\today} % default report date is "today"
 
 \newcommand\reporttitle[3]{\def\RPTPREFIX{#1} \def\RPTNUMBER{#2} \def\RPTTITLE{#3}}
@@ -148,3 +149,5 @@
     \maketitle
     \thispagestyle{fancy}    
 }
+
+\AtEndDocument{\printbibliography}

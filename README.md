@@ -4,9 +4,11 @@ This is a template for reports (such as lab reports, MP reports) for ECE courses
 
 ## Usage
 
-Put `\usepackage{lab-report}` in the preamble. Write your document like `template.tex` and **compile with XeTeX or LuaTeX** to make `ctex` package working normally. (Sometimes we need to input a couple of Chinese characters… `ctex` makes this possible)
+Put `\usepackage{zjui-report}` in the preamble. Write your document like `template.tex` and **compile with XeTeX or LuaTeX** to make `ctex` package working normally. (Sometimes we need to input a couple of Chinese characters… `ctex` makes this possible)
 
 If you do not like `ctex`, simply remove it from `lab-report.cls`.
+
+Package `BibTex` is already included in the package. See `zjui-report.sty` for more details about packages already included.
 
 ## Feedback
 
