@@ -1,15 +1,17 @@
 % lab-report.sty
 % Author: Martin Zhong
-% Date: 2023/01/22
-% Version: v2.3.1
+% Date: 2023/02/06
+% Version: v2.3.2
 % License: MIT
-% Description: Lab Report Template for ZJU-UIUC Labs. All Rights Reserved.
+% Description: Report Template for ZJU-UIUC ECE course series. All Rights Reserved.
 
-\def\VERSION{v2.3.1}
-\def\RELEASEDATE{2023/01/22}
+\def\VERSION{v2.3.2}
+\def\RELEASEDATE{2023/02/06}
 
-\ProvidesPackage{zjui-report}[\RELEASEDATE~\VERSION~by Martin Zhong (zhongmartin@outlook.com) The template for reports of ZJU-UIUC ECE courses. All Rights Reserved.]
+\ProvidesPackage{zjui-report}[\RELEASEDATE~\VERSION~by Martin Zhong (zhongmartin@outlook.com) Report Template for ZJU-UIUC ECE course series. All Rights Reserved.]
 
+\RequirePackage{libertinus-otf}
+\RequirePackage[scheme=plain]{ctex} % for Chinese support
 \RequirePackage{booktabs}
 \RequirePackage{indentfirst}
 \RequirePackage{fancyhdr}
@@ -17,7 +19,6 @@
 \RequirePackage{graphicx}
 \RequirePackage{caption}
 \RequirePackage{amsmath}  % for math spacing
-\RequirePackage{amssymb}  % for math symbols
 \RequirePackage{lastpage}
 \RequirePackage[top=2.54cm, bottom=2.54cm, left=3.18cm, right=3.18cm]{geometry} % page layout; same with the default of MS word
 \RequirePackage{enumitem}
@@ -25,8 +26,6 @@
 \RequirePackage{listings}
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{hyperref}
-\RequirePackage{newtx} \defaultfontfeatures{}
-\RequirePackage[scheme=plain]{ctex} % for Chinese support
 \RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% 支持伪代码
 \RequirePackage[useregional, showdow]{datetime2}
 \RequirePackage[style=alphabetic,backend=bibtex]{biblatex}
@@ -120,12 +119,8 @@
     
         {\huge\bfseries \RPTPREFIX ~\#\RPTNUMBER: \RPTTITLE}
     
-        \vspace{2cm}
+        \vspace{3cm}
 
-        {\normalsize Reported by}
-
-        \vspace{\lineskip}
-        
         {\MEMBERS}
     
         \vfill
