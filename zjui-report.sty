@@ -91,7 +91,7 @@
 }
 
 \title{\textbf{\RPTPREFIX~\#\RPTNUMBER: \RPTTITLE}}
-\date{}
+\date{\today}
 \author{}
 \def\RPTDATE{\today} % default report date is "today"
 
@@ -100,6 +100,7 @@
 \newcommand\classsection[1]{\def\SECTION{#1}}
 \newcommand\members[1]{\def\MEMBERS{#1}}
 \newcommand\logo[1]{\def\PATHTOLOGO{#1}}
+\newcommand\reportdate[1]{\def\RPTDATE{#1} \date{\RPTDATE}}
 
 \newcommand\maketitlepage{
     \begin{titlepage}
