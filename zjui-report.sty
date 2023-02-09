@@ -1,16 +1,16 @@
 % lab-report.sty
 % Author: Martin Zhong
-% Date: 2023/02/06
-% Version: v2.3.2
+% Date: 2023/02/09
+% Version: v2.3.3
 % License: MIT
 % Description: Report Template for ZJU-UIUC ECE course series. All Rights Reserved.
 
-\def\VERSION{v2.3.2}
-\def\RELEASEDATE{2023/02/06}
+\def\VERSION{v2.3.3}
+\def\RELEASEDATE{2023/02/09}
 
-\ProvidesPackage{zjui-report}[\RELEASEDATE~\VERSION~by Martin Zhong (zhongmartin@outlook.com) Report Template for ZJU-UIUC ECE course series. All Rights Reserved.]
+\ProvidesPackage{zjui-report}[\RELEASEDATE \VERSION by Martin Zhong (zhongmartin@outlook.com) Report Template for ZJU-UIUC ECE course series.]
 
-\RequirePackage{libertinus-otf}
+\RequirePackage{kpfonts-otf}
 \RequirePackage[scheme=plain]{ctex} % for Chinese support
 \RequirePackage{booktabs}
 \RequirePackage{indentfirst}
@@ -26,8 +26,8 @@
 \RequirePackage{listings}
 \RequirePackage[dvipsnames]{xcolor}
 \RequirePackage{hyperref}
-\RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% 支持伪代码
-\RequirePackage[useregional, showdow]{datetime2}
+\RequirePackage[ruled,hangingcomment,nofillcomment,noend]{algorithm2e}% pseudo-code support
+\RequirePackage[en-US]{datetime2}
 \RequirePackage[style=alphabetic,backend=bibtex]{biblatex}
 
 \SetKwData{Null}{null}
@@ -58,7 +58,7 @@
 \setdescription{itemsep=0pt, partopsep=0pt, parsep=\parskip, topsep=5pt}
 
 \renewcommand{\baselinestretch}{1.2} % 设置行距
-
+\newcommand\CFOOTER{\scriptsize This PDF report is generated at \DTMnow.}
 \everymath{\displaystyle}
 
 \pagestyle{fancy}
@@ -66,7 +66,7 @@
 \fancyhead[C]{}
 \fancyhead[L]{\RPTPREFIX~\RPTNUMBER}
 \fancyhead[R]{\RPTDATE}
-\fancyfoot[C]{Page~\thepage~of~\pageref{LastPage}}
+\fancyfoot[C]{--\thepage/\pageref{LastPage}-- \\ \CFOOTER}
 \fancyfoot[L]{\COURSECODE}
 \fancyfoot[R]{\SEMESTER}
 % \renewcommand{\headrulewidth}{0pt}
@@ -81,50 +81,51 @@
 \fancypagestyle{contentpage}
 {
 \fancyhf{}
-\fancyhead[C]{}
+\fancyhead[C]{Contents}
 \fancyhead[L]{\RPTPREFIX~\RPTNUMBER}
 \fancyhead[R]{\RPTDATE}
-\fancyfoot[C]{Contents}
+\fancyfoot[C]{\CFOOTER}
 \fancyfoot[L]{\COURSECODE}
 \fancyfoot[R]{\SEMESTER}
 }
 
 \title{\textbf{\RPTPREFIX~\#\RPTNUMBER: \RPTTITLE}}
-\date{\today}
+\date{}
 \author{}
-\def\RPTDATE{\today} % default report date is "today"
+\def\RPTDATE{\DTMtoday} % default report date is "today"
 
 \newcommand\reporttitle[3]{\def\RPTPREFIX{#1} \def\RPTNUMBER{#2} \def\RPTTITLE{#3}}
 \newcommand\courseinfo[3]{\def\COURSECODE{#1} \def\COURSENAME{#2} \def\SEMESTER{#3}}
 \newcommand\classsection[1]{\def\SECTION{#1}}
 \newcommand\members[1]{\def\MEMBERS{#1}}
 \newcommand\logo[1]{\def\PATHTOLOGO{#1}}
-\newcommand\reportdate[1]{\def\RPTDATE{#1} \date{\RPTDATE}}
+
+\newcommand\reportdate[3]{\def\RPTDATE{\DTMdisplaydate{#1}{#2}{#3}{0}}}
 
 \newcommand\maketitlepage{
     \begin{titlepage}
         \centering
-        
+
         \includegraphics[width=0.5\pagewidth]{\PATHTOLOGO}
-    
+
         \vspace{2cm}
 
         {\Large\sf \COURSECODE: \COURSENAME}
-    
+
         \vspace{1em}
-        
+
         {\Large\sf \RPTPREFIX ~Report}
-    
+
         \vfill
-    
+
         {\huge\bfseries \RPTPREFIX ~\#\RPTNUMBER: \RPTTITLE}
-    
+
         \vspace{3cm}
 
         {\MEMBERS}
-    
+
         \vfill
-    
+
         \begin{table}[h!]
             \centering\sf
             \begin{tabular}{r @{:\hspace{.5em}} l}
@@ -137,13 +138,9 @@
     \end{titlepage}
 
     \tableofcontents\thispagestyle{contentpage}\setcounter{page}{0}
-    \vfill
-    \begin{flushright}
-        Compiled at \DTMnow
-    \end{flushright}
-
+    \pagebreak
     \maketitle
-    \thispagestyle{fancy}    
+    \thispagestyle{fancy}
 }
 
 \AtEndDocument{\printbibliography}
