@@ -1,0 +1,107 @@
+\documentclass{zjui-report}
+\usepackage{lipsum}
+
+%%% Report information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\logo{LOGO2.png}
+\coursecode{ECE 459}
+\coursename{Communication Systems}
+\reporttitle{A Sample for Reports with Any Type You Want}
+\reporttype{Project Report \#1} % Uncomment this line if you want to use \generalreportcover
+\instructor{\name{Said}{Mikki}}
+\reportdate{\today}
+%%% AUTHOR/TEAM INFO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\authornames{
+    \begin{table}[H]
+        \centering
+        \large
+        \renewcommand\arraystretch{1.5}
+        \begin{tabular}{cc}
+            \underline{\textbf{Name}}   & \underline{\textbf{Student ID}}    \\
+            \name{Great}{Gatsby}  & 3200110000     \\
+            \namech{San}{Zhang}{张\quad 三}    & 3200110000     \\
+            \name{Captain}{Price}     & 3200110000     \\
+        \end{tabular}
+    \end{table}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% BIBLIOGRAPHY DATABASE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addbibresource{references.bib} % The bib database
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+\frontmatter
+%%% TITLE PAGE: select the one you need %%%%%%%%%%%%%%%%%%%%%%%%%
+\makecoverpage % coverpage for other reports; NEEDS \reporttype{<Type>}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% TOC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\mainmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\section{Problem statement}
+\lipsum[1]\cite{li1999,haynes1951}.
+\section{Importance}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{LOGO2.png}
+    \caption{The logo of ZJU-UIUC Institute.}
+    \label{fig:logo}
+\end{figure}
+
+\section{Literature Review}
+\lipsum[2]\cite{j.a.prufrock2009,li1999,ref1}.
+\begin{equation}
+    f\left( x \right) =\sum_{n=0}^{\infty}{\frac{1}{n!}f^{\left( n \right)}\left( x_0 \right) \left( x-x_0 \right) ^n}, x\in U\left( x_0 \right)
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        e^{ix} & =1+ix+\frac{1}{2!}\left( ix \right) ^2+\frac{1}{3!}\left( ix \right) ^3+\cdots \frac{1}{n!}\left( ix \right) ^n+\cdots
+        \\
+               & =1+ix-\frac{1}{2!}x^2-i\frac{1}{3!}x^3+\frac{1}{4!}x^4+i\frac{1}{5!}x^5-\cdots
+        \\
+               & =\left( 1-\frac{1}{2!}x^2+\frac{1}{4!}x^4-\cdots \right) +i\left( x-\frac{1}{3!}x^3+\frac{1}{5!}x^5-\cdots \right)
+        \\
+               & =\cos x+i\sin x
+    \end{aligned}
+\end{equation}
+\chapter{Methodology}
+
+Test the ability to print some units, say (in texts), \SI{10e5}{\um\ohm\degree}.
+
+It also applies to equations,
+\begin{equation}
+    R_{t}=\SI{10e5}{\um\ohm\degree}
+\end{equation}
+\chapter{Results}
+
+\chapter{Discussion}
+
+\chapter{Conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% References %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\printbibliography[title={References},heading=bibintoc]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\backmatter
+%%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Appendices}
+\renewcommand{\thesection}{\Alph{section}}
+% All appendices here, using sections for multiple appendices
+\section{Some Test Data}
+
+\section{Derivation of Square Law}
+
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Acknowledgement}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
