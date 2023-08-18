@@ -112,7 +112,7 @@
 \newcommand\makecoverpage{
   \begin{titlepage}
     \center % Center everything on the page
-    \includegraphics[width=0.2\linewidth]{\LOGOPATH}\\[1cm]
+    \includegraphics[width=0.6\linewidth]{\LOGOPATH}\\[1cm]
     \textsc{\Large\COURSECODE}\\[0.5cm] % heading course Number
     \textsc{\Large\COURSENAME}\\[0.5cm] % heading course name
     \textsc{\Large\GRPTTYPE}\\[1cm] % Minor heading
