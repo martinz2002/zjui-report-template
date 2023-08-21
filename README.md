@@ -36,21 +36,17 @@ ZJUI课程报告的$\LaTeX$模板。
 
 `\name{<GivenName>}{<FamilyName>}`可以生成一个姓名（姓在后），其中姓以小号大写字母（Small Capital）显示。
 
-`\reporttype{<Type>}`定义报告的类型。**该项仅在通用报告(general report)封面上出现。**
+`\reporttype{<Type>}`定义报告的类型，显示在课程名下方。
 
 `\semester{<Semester>}`定义报告所属的学期，如Spring 2023。将出现在封面上。
 
-`\instructor{<FacultyName>}`定义指导教师姓名。将出现在封面上。**该项仅在个人报告封面生效。**
+`\instructor{<FacultyName>}`定义授课教师姓名。将出现在封面上。
 
 `\reportdate{<Date>}`定义报告的撰写日期。将出现在所有封面上。
 
 #### 封面生成类
 
-`\individualreportcover`将生成一个个人毕业设计报告的封面。个人毕业设计报告（Senior Design Individual Report）用于ZJU-UIUC联合学院本科生申请浙江大学学位。
-
-`\finalreportcover`将生成一个Final Report的封面。
-
-`\generalreportcover`将生成一个通用的封面（例如Individual Progress Report）。通用封面包含报告的类型（例如Individual Progress Report）和标题（填写项目名称）。
+`\makecoverpage`将生成一个报告封面。
 
 ### 文献管理
 
