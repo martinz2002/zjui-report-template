@@ -29,7 +29,6 @@
   {\printdate}}
 \renewcommand{\bibname}{References}
 \renewcommand\bibname{References}
-\RequirePackage[scheme=plain]{ctex}% in case there's some Chinese characters
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{hyperref}
@@ -51,7 +50,6 @@
 {\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
 {\thechapter}{1em}{}
 \titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
-\titlecontents{chapter}[1.5em]{}{\contentslabel{1.5em}}{\hspace{-1.5em}}{\titlerule*[10pt]{.}\contentspage}
 
 \titleformat{\section}
 {\fontsize{14pt}{\baselineskip}\selectfont\bfseries}
@@ -97,16 +95,14 @@
 \newcommand\coursename[1]{\def\COURSENAME{#1}}
 \newcommand\logo[1]{\def\LOGOPATH{#1}}
 \newcommand\name[2]{#1~\textsc{#2}}
-\newcommand\namech[3]{{#1~\textsc{#2}}~(#3)}
 
-\def\RPTTYPE{Type of the report}
-\def\RPTTITLE{Put your title here}
-\def\RPTDATE{Put the date of the report here}
-\def\AUTHORNAME{Your teammembers, or the author of the individual reports}
-\def\FACULTYNAME{The teacher who sponsor/directs you}
-\def\TANAME{The name of your TA}
-\def\COURSECODE{ECE xxx}
-\def\COURSENAME{Course Name}
+\def\RPTTYPE{~}
+\def\RPTTITLE{~}
+\def\RPTDATE{~}
+\def\AUTHORNAME{~}
+\def\FACULTYNAME{~}
+\def\COURSECODE{~}
+\def\COURSENAME{~}
 
 
 \newcommand\makecoverpage{
