@@ -51,8 +51,9 @@
 \RequirePackage{hyperref}
 \RequirePackage{xurl}
 \RequirePackage{setspace}
+\RequirePackage[scheme=plain]{ctex}
 \RequirePackage[T1]{fontenc}
-\RequirePackage{mathptmx}
+\RequirePackage{mathpazo}
 \RequirePackage[per-mode=symbol,inter-unit-product = \ensuremath{{}\cdot{}},mode=math]{siunitx}
 \DeclareSIPrefix\micro{\text{\textmu}}{-3} % typing SI Units, not necessary for default LMC font
 \onehalfspacing
