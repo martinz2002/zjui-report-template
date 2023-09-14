@@ -13,11 +13,10 @@
 % 
 % The Current Maintainer of this work is Tiantian Zhong.
 %
-% This work consists of the files zjui-report-simple.cls and
-% simple-sample.tex.
+% This work consists of the files zjui-report-simple.cls.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{zjui-report}[2023-09-14 by Martin Zhong (zhongmartin@outlook.com) A Course Report Template]
+\ProvidesClass{zjui-report-simple}[2023-09-14 by Martin Zhong (zhongmartin@outlook.com) A Course Report Template]
 
 \LoadClass[a4paper,10pt,oneside]{article}
 

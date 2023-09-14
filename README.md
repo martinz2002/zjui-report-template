@@ -12,7 +12,7 @@ ZJUI课程报告的$\LaTeX$模板。
 
 ## 用法
 
-本模板基于`book`类编写，默认使用a4paper纸张、12磅字，页边距2.54cm（约1英寸）。
+本模板提供了两种样式：`zjui-report.cls`基于`book`类编写，`zjui-report-simple.cls`基于`article`类编写。二者默认使用a4paper纸张、10磅字，页边距2.54cm（约1英寸）。
 
 ### $\LaTeX$基本语法
 
