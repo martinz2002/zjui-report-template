@@ -1,4 +1,4 @@
-%% zjui-report.cls
+%% zjui-report-simple.cls
 %% Copyright 2023 Tiantian Zhong
 %
 % This work may be distributed and/or modified under the
@@ -13,12 +13,13 @@
 % 
 % The Current Maintainer of this work is Tiantian Zhong.
 %
-% This work consists of the files zjui-report.cls and sample.tex.
+% This work consists of the files zjui-report-simple.cls and
+% simple-sample.tex.
 
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{zjui-report}[2023-08-21 by Martin Zhong (zhongmartin@outlook.com) Template for ZJU-UIUC Senior Design Inividual Report]
+\ProvidesClass{zjui-report}[2023-09-14 by Martin Zhong (zhongmartin@outlook.com) A Course Report Template]
 
-\LoadClass[a4paper,10pt,oneside]{book}
+\LoadClass[a4paper,10pt,oneside]{article}
 
 \RequirePackage{booktabs}
 \RequirePackage{tabularx}
@@ -44,8 +45,6 @@
   \iffieldundef{year}
   {\bibstring{nodate}}
   {\printdate}}
-\renewcommand{\bibname}{References}
-\renewcommand\bibname{References}
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{hyperref}
@@ -67,32 +66,15 @@
   itemsep=1em,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \setlength{\topsep}{0ex} %列表到上下文的垂直距离
 
-\titleformat{\chapter}
-{\fontsize{16pt}{\baselineskip}\selectfont\bfseries}
-{\thechapter}{1em}{}
-\titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
-
-\titleformat{\section}
-{\fontsize{14pt}{\baselineskip}\selectfont\bfseries}
-{\thesection}{1em}{}
-
-\titleformat{\subsection}
-{\normalsize\bfseries}
-{\thesubsection}{1em}{}
-
-\titleformat{\subsubsection}
-{\normalsize\bfseries}
-{\thesubsubsection}{1em}{}
-
 \pagestyle{fancy}\fancyhf{}
 \renewcommand{\headrulewidth}{0.1mm}
-\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
 \fancypagestyle{plain}{
-  \fancyhead[L]{\GRPTTYPE}
-  \fancyhead[R]{\leftmark}
+  \fancyhead[L]{\COURSECODE: \COURSENAME}
+  \fancyhead[R]{\GRPTTYPE}
   \fancyfoot[C]{\thepage}}
-\fancyhead[L]{\RPTTYPE}
-\fancyhead[R]{\leftmark}
+\fancyhead[L]{\COURSECODE: \COURSENAME}
+\fancyhead[R]{\GRPTTYPE}
 \fancyfoot[C]{\thepage}
 
 \lstset{
@@ -124,7 +106,6 @@
 \def\FACULTYNAME{~}
 \def\COURSECODE{~}
 \def\COURSENAME{~}
-
 
 \newcommand\makecoverpage{
   \begin{titlepage}
