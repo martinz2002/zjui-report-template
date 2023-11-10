@@ -1,10 +1,10 @@
-# Individual Report Template for ZJU-UIUC ECE 445: Senior Design Project Lab
+# ZJUI Course Project Report Template
 
 ZJUI课程报告的$\LaTeX$模板。
 
 基于[UIUC ECE445 Template](https://courses.grainger.illinois.edu/ece445zjui/documents/445_template.zip)制作。
 
-## 许可
+## Copyright
 
 `references.bib`中条目版权根据其所属数据库与作者的协议归数据库和/或作者所有。
 
